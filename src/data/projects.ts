@@ -1,0 +1,86 @@
+import { Project } from '@/types';
+
+export const projects: Project[] = [
+  {
+    id: 'aether-cloud',
+    slug: 'aether-cloud-analytics-saas',
+    title: 'Aether Cloud Analytics & SaaS',
+    category: 'mern',
+    categoryBadge: 'MERN Stack',
+    description:
+      'Full-stack cloud infrastructure and metrics monitoring platform featuring automated telemetry, custom dashboard widgets, and role-based access control.',
+    image: '/images/projects/project-aether.jpg',
+    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind CSS'],
+    liveUrl: 'https://example.com',
+    githubUrl: 'https://github.com',
+    featured: true,
+  },
+  {
+    id: 'luna-ecommerce',
+    slug: 'luna-minimal-ecommerce-experience',
+    title: 'Luna Minimal E-Commerce Experience',
+    category: 'frontend',
+    categoryBadge: 'Frontend',
+    description:
+      'High-performance headless storefront designed with fluid micro-interactions, instantaneous page transitions, and accessible cart management.',
+    image: '/images/projects/project-luna.jpg',
+    technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'REST API'],
+    liveUrl: 'https://example.com',
+    githubUrl: 'https://github.com',
+    featured: true,
+  },
+  {
+    id: 'workflow-hub',
+    slug: 'workflow-hub-marketplace',
+    title: 'WorkFlow Hub Marketplace',
+    category: 'bubble',
+    categoryBadge: 'Bubble.io',
+    description:
+      'Two-sided digital talent and services marketplace built on Bubble.io with integrated stripe payments, messaging, and automated milestone payouts.',
+    image: '/images/projects/project-workflow.jpg',
+    technologies: ['Bubble.io', 'Workflow API', 'Stripe Integration', 'No-Code'],
+    liveUrl: 'https://example.com',
+    featured: true,
+  },
+  {
+    id: 'vertex-studio',
+    slug: 'vertex-studio-design-cms',
+    title: 'Vertex Studio Design CMS',
+    category: 'webflow',
+    categoryBadge: 'Webflow',
+    description:
+      'Bespoke digital design agency showcase engineered in Webflow with CMS-driven dynamic portfolio collections, responsive layouts, and clean animations.',
+    image: '/images/projects/project-vertex.jpg',
+    technologies: ['Webflow', 'Webflow CMS', 'Custom JavaScript', 'Responsive'],
+    liveUrl: 'https://example.com',
+    featured: true,
+  },
+  {
+    id: 'taskflow-portal',
+    slug: 'taskflow-distributed-team-workspace',
+    title: 'TaskFlow Distributed Team Workspace',
+    category: 'mern',
+    categoryBadge: 'MERN Stack',
+    description:
+      'Collaborative project management ecosystem supporting real-time activity boards, sprint planning, and persistent MongoDB audit logging.',
+    image: '/images/projects/project-taskflow.jpg',
+    technologies: ['React', 'Express.js', 'MongoDB', 'Node.js'],
+    liveUrl: 'https://example.com',
+    githubUrl: 'https://github.com',
+    featured: false,
+  },
+  {
+    id: 'nexus-design-system',
+    slug: 'nexus-component-library-tokens',
+    title: 'Nexus Component Library & Tokens',
+    category: 'frontend',
+    categoryBadge: 'Frontend',
+    description:
+      'Production-grade design system documentation and component playground conforming strictly to WCAG AA accessibility standards.',
+    image: '/images/projects/project-nexus.jpg',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Storybook'],
+    liveUrl: 'https://example.com',
+    githubUrl: 'https://github.com',
+    featured: false,
+  },
+];

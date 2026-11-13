@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --dark: #0b1220;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  color: var(--text-primary);
+  background-color: var(--background);
+  overflow-x: hidden;
+}
+
+@keyframes navbarWaterDrop {
+  0% {
+    transform: translateX(-80px);
+    opacity: 0;
+  }
+  2% {
+    opacity: 0.9;
+  }
+  5% {
+    opacity: 1;
+  }
+  88.89% {
+    transform: translateX(calc(100vw + 20px));
+    opacity: 1;
+  }
+  88.9% {
+    opacity: 0;
+    transform: translateX(calc(100vw + 20px));
+  }
+  100% {
+    transform: translateX(calc(100vw + 20px));
+    opacity: 0;
+  }
+}
+
+.animate-water-drop {
+  animation: navbarWaterDrop 9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform;
+}

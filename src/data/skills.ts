@@ -1,0 +1,63 @@
+import { SkillCategory } from '@/types';
+
+export const skillCategories: SkillCategory[] = [
+  {
+    id: 'frontend',
+    title: 'Frontend',
+    subtitle: 'Core & Frameworks',
+    iconName: 'code',
+    iconBg: 'bg-[#EEF2FF]',
+    iconColor: 'text-primary',
+    skills: ['HTML5', 'CSS3', 'JavaScript', 'TypeScript', 'React.js', 'Next.js', 'Tailwind CSS'],
+  },
+  {
+    id: 'backend',
+    title: 'Backend',
+    subtitle: 'Server & Architecture',
+    iconName: 'server',
+    iconBg: 'bg-[#EEF2FF]',
+    iconColor: 'text-primary',
+    skills: ['Node.js', 'Express.js', 'REST APIs', 'Middleware', 'Authentication (JWT)'],
+  },
+  {
+    id: 'database',
+    title: 'Database',
+    subtitle: 'Storage & Modeling',
+    iconName: 'database',
+    iconBg: 'bg-[#EEF2FF]',
+    iconColor: 'text-primary',
+    skills: ['MongoDB', 'Mongoose ODM', 'Aggregation Pipelines', 'CRUD Operations'],
+  },
+  {
+    id: 'nocode',
+    title: 'No-Code / Low-Code',
+    subtitle: 'Rapid Product Delivery',
+    iconName: 'sliders',
+    iconBg: 'bg-[#EEF2FF]',
+    iconColor: 'text-primary',
+    skills: ['Bubble.io', 'Webflow', 'Custom Workflows', 'Webflow CMS'],
+  },
+  {
+    id: 'devtools',
+    title: 'Development Tools',
+    subtitle: 'Version Control & Editors',
+    iconName: 'terminal',
+    iconBg: 'bg-[#EEF2FF]',
+    iconColor: 'text-primary',
+    skills: ['Git', 'GitHub', 'VS Code', 'Postman', 'npm / yarn'],
+  },
+  {
+    id: 'standards',
+    title: 'Design & Standards',
+    subtitle: 'Quality & Accessibility',
+    iconName: 'badge-check',
+    iconBg: 'bg-[#EEF2FF]',
+    iconColor: 'text-primary',
+    skills: [
+      'Responsive Design',
+      'UI Implementation',
+      'Web Accessibility (a11y)',
+      'SEO Optimization',
+    ],
+  },
+];
