@@ -1,6 +1,6 @@
 # Md Rakib Hossen — Full Stack Developer Portfolio
 
-[![CI/CD Pipeline](https://github.com/MdRakibHossen917/My_Portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/MdRakibHossen917/My_Portfolio/actions/workflows/ci.yml)
+[![CI/CD Pipeline](https://github.com/MdRakibHossen917/personal_portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/MdRakibHossen917/personal_portfolio/actions/workflows/ci.yml)
 [![Next.js](https://img.shields.io/badge/Next.js-15.1.7-black?style=flat&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.0.0-blue?style=flat&logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7.3-3178C6?style=flat&logo=typescript)](https://www.typescriptlang.org/)
@@ -54,8 +54,8 @@ A modern, high-performance personal portfolio website built with **Next.js 15 (A
 
 ### 2. Installation
 ```bash
-git clone https://github.com/MdRakibHossen917/My_Portfolio.git
-cd My_Portfolio
+git clone https://github.com/MdRakibHossen917/personal_portfolio.git
+cd personal_portfolio
 npm install
 ```
 
