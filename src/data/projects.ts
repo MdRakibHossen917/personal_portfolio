@@ -80,6 +80,26 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    id: 'dms-chauffeur',
+    slug: 'dms-luxury-chauffeur-booking-platform',
+    title: 'DMS – Luxury Chauffeur Booking Platform',
+    category: 'bubble',
+    categoryBadge: 'Bubble.io',
+    description:
+      'A full-stack chauffeur booking platform built with Bubble.io, featuring instant ride quotations, flexible booking options, and vehicle selection. Designed to streamline luxury transportation services through an intuitive booking experience.',
+    image: '/images/projects/dmscar.webp',
+    technologies: [
+      'Bubble.io',
+      'Full-Stack Development',
+      'Booking System',
+      'Workflow Automation',
+      'Dynamic Forms',
+      'Responsive Design',
+    ],
+    liveUrl: 'https://dmsserviceslimited.bubbleapps.io/',
+    featured: true,
+  },
+  {
     id: 'ai-partners',
     slug: 'ai-partners-consulting-website',
     title: 'AI Partners – AI Consulting Website',
