@@ -23,7 +23,7 @@ export const projects: Project[] = [
     categoryBadge: 'Frontend',
     description:
       'High-performance headless storefront designed with fluid micro-interactions, instantaneous page transitions, and accessible cart management.',
-    image: '/images/projects/project-luna.jpg',
+    image: '/images/projects/hilnexFontend.webp',
     technologies: ['Next.js', 'TypeScript', 'Tailwind CSS', 'REST API'],
     liveUrl: 'https://example.com',
     githubUrl: 'https://github.com',
