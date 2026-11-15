@@ -25,6 +25,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mdrakibhossen.com'),
   title: 'Md Rakib Hossen | Full Stack Developer',
   description:
     'Portfolio of Md Rakib Hossen, a Full Stack Developer specializing in MERN Stack, React, Next.js, Bubble.io, and Webflow.',
@@ -32,6 +33,7 @@ export const metadata: Metadata = {
     title: 'Md Rakib Hossen | Full Stack Developer',
     description:
       'Portfolio of Md Rakib Hossen, a Full Stack Developer specializing in MERN Stack, React, Next.js, Bubble.io, and Webflow.',
+    url: 'https://mdrakibhossen.com',
     type: 'website',
     locale: 'en_US',
     siteName: 'Md Rakib Hossen Portfolio',
