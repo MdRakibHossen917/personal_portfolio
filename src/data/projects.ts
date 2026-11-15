@@ -17,14 +17,14 @@ export const projects: Project[] = [
   },
   {
     id: 'hilnex-it',
-    slug: 'hilnex-it-development-platform',
-    title: 'Hilnex Limited — Web & Software Development Platform',
+    slug: 'hilnex-corporate-it-software-website',
+    title: 'HiLNEX – Corporate IT & Software Website',
     category: 'frontend',
     categoryBadge: 'Frontend',
     description:
-      'Corporate website and IT solutions platform built for Hilnex Limited featuring fluid responsive interfaces, optimized performance, and modern UI architectures.',
+      'Modern corporate website designed and developed to showcase IT services, software solutions, and digital business capabilities with interactive animations, responsive layouts, and a premium user experience.',
     image: '/images/projects/hilnexFontend.webp',
-    technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS'],
+    technologies: ['React.js', 'Tailwind CSS', 'DaisyUI', 'Framer Motion', 'React Router'],
     liveUrl: 'https://hilnex-it.vercel.app/',
     githubUrl: 'https://github.com/MdRakibHossen917/hilnex-it',
     featured: true,
