@@ -43,16 +43,16 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 'vertex-studio',
-    slug: 'vertex-studio-design-cms',
-    title: 'Vertex Studio Design CMS',
+    id: 'ai-partners',
+    slug: 'ai-partners-consulting-website',
+    title: 'AI Partners – AI Consulting Website',
     category: 'webflow',
     categoryBadge: 'Webflow',
     description:
-      'Bespoke digital design agency showcase engineered in Webflow with CMS-driven dynamic portfolio collections, responsive layouts, and clean animations.',
-    image: '/images/projects/project-vertex.jpg',
-    technologies: ['Webflow', 'Webflow CMS', 'Custom JavaScript', 'Responsive'],
-    liveUrl: 'https://example.com',
+      'A modern AI consulting website built with Webflow, featuring a clean and minimal design, responsive layouts, and intuitive navigation to showcase AI consulting, training, and AI agent development services.',
+    image: '/images/projects/projects_aipartenrs.webp',
+    technologies: ['Webflow', 'Responsive Design', 'UI/UX Design', 'Web Development'],
+    liveUrl: 'https://weareaipartners.com/',
     featured: true,
   },
   {
