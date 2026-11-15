@@ -61,6 +61,25 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    id: 'capital-compass',
+    slug: 'capital-compass-business-readiness-platform',
+    title: 'Capital Compass – Business Readiness Platform',
+    category: 'bubble',
+    categoryBadge: 'Bubble.io',
+    description:
+      'A full-stack business readiness assessment platform built with Bubble.io, enabling businesses to evaluate their financial health, capital readiness, and growth potential through a structured 67-question assessment. Features personalized readiness scoring, interactive dashboards, and detailed reports with actionable insights.',
+    image: '/images/projects/capital_compass.webp',
+    technologies: [
+      'Bubble.io',
+      'No-Code Full-Stack Development',
+      'Database Management',
+      'Workflow Automation',
+      'API Integration',
+      'Responsive UI/UX Design',
+    ],
+    featured: true,
+  },
+  {
     id: 'ai-partners',
     slug: 'ai-partners-consulting-website',
     title: 'AI Partners – AI Consulting Website',
