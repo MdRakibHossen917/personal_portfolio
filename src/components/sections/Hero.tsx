@@ -88,9 +88,6 @@ export default function Hero() {
                 <p className="font-heading text-xl sm:text-2xl lg:text-[26px] font-bold text-slate-100 tracking-tight">
                   Full Stack Developer
                 </p>
-                <p className="text-xs sm:text-sm font-semibold tracking-wide text-indigo-300/90 uppercase font-mono mt-0.5">
-                  MERN Stack Developer
-                </p>
               </div>
 
               {/* Specialty Badges */}
