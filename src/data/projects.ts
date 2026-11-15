@@ -113,6 +113,19 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    id: 'velorasend',
+    slug: 'velorasend-international-money-transfer-platform',
+    title: 'VeloraSend – International Money Transfer Platform',
+    category: 'webflow',
+    categoryBadge: 'Webflow',
+    description:
+      'A modern fintech website built with Webflow, designed to introduce a seamless international money transfer experience. Featuring a clean, premium interface, responsive layouts, elegant typography, and mobile app showcases to communicate secure and convenient financial services.',
+    image: '/images/projects/velorasend.webp',
+    technologies: ['Webflow', 'Responsive Design', 'UI/UX Design', 'Web Development'],
+    liveUrl: 'https://velorasend.com/',
+    featured: true,
+  },
+  {
     id: 'taskflow-portal',
     slug: 'taskflow-distributed-team-workspace',
     title: 'TaskFlow Distributed Team Workspace',
