@@ -43,6 +43,24 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    id: 'tulmada',
+    slug: 'tulmada-christian-language-learning-platform',
+    title: 'Tulmada – Christian Language Learning Platform',
+    category: 'bubble',
+    categoryBadge: 'Bubble.io',
+    description:
+      'A modern Christian language learning landing page built with Bubble.io, featuring a minimalist black-and-white design, elegant typography, and responsive layouts to introduce a unique language learning experience inspired by the words of Jesus.',
+    image: '/images/projects/tulmada.webp',
+    technologies: [
+      'Bubble.io',
+      'No-Code Development',
+      'Responsive Design',
+      'UI/UX Design',
+    ],
+    liveUrl: 'https://tulmada.com/',
+    featured: true,
+  },
+  {
     id: 'ai-partners',
     slug: 'ai-partners-consulting-website',
     title: 'AI Partners – AI Consulting Website',
