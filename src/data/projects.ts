@@ -156,6 +156,24 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    id: 'otf-business',
+    slug: 'otf-business-intuitive-ai-experience',
+    title: 'OTF Business – Intuitive AI Experience',
+    category: 'webflow',
+    categoryBadge: 'Webflow',
+    description:
+      'A modern business website designed in Webflow, featuring an immersive AI-inspired hero experience, elegant navigation, premium visuals, and an interactive slider. Crafted to communicate innovation, intelligent solutions, and a sophisticated digital brand identity.',
+    image: '/images/projects/Intuitive AI Workspace Hero.webp',
+    technologies: [
+      'Webflow',
+      'UI/UX Design',
+      'Responsive Design',
+      'Interactive Slider',
+      'Custom Animations',
+    ],
+    featured: true,
+  },
+  {
     id: 'taskflow-portal',
     slug: 'taskflow-distributed-team-workspace',
     title: 'TaskFlow Distributed Team Workspace',
