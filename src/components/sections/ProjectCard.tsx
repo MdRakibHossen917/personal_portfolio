@@ -56,17 +56,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <div className="flex items-center justify-between border-t border-slate-100 pt-4 mt-auto">
           {/* Left Actions */}
           <div className="flex items-center gap-2">
-            {project.liveUrl && (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-3.5 py-1.5 text-xs font-semibold text-white shadow-2xs transition-colors hover:bg-primary-hover focus:outline-hidden focus:ring-2 focus:ring-primary focus:ring-offset-2"
-              >
-                <span>Live Preview</span>
-                <ExternalLink className="h-3 w-3" />
-              </a>
-            )}
+            <a
+              href={project.liveUrl || '#'}
+              target={project.liveUrl && project.liveUrl !== '#' ? '_blank' : undefined}
+              rel={project.liveUrl && project.liveUrl !== '#' ? 'noopener noreferrer' : undefined}
+              className="inline-flex items-center gap-1.5 rounded-lg bg-primary px-3.5 py-1.5 text-xs font-semibold text-white shadow-2xs transition-colors hover:bg-primary-hover focus:outline-hidden focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            >
+              <span>Live Preview</span>
+              <ExternalLink className="h-3 w-3" />
+            </a>
 
             {project.githubUrl && (
               <a

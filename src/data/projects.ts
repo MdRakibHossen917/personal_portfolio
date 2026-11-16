@@ -77,6 +77,7 @@ export const projects: Project[] = [
       'API Integration',
       'Responsive UI/UX Design',
     ],
+    liveUrl: 'https://example.com',
     featured: true,
   },
   {
@@ -153,6 +154,7 @@ export const projects: Project[] = [
       'Custom Animations',
       'Interactive Layouts',
     ],
+    liveUrl: 'https://example.com',
     featured: true,
   },
   {
@@ -171,6 +173,7 @@ export const projects: Project[] = [
       'Interactive Slider',
       'Custom Animations',
     ],
+    liveUrl: 'https://example.com',
     featured: true,
   },
   {
