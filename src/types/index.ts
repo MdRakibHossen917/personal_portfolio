@@ -9,6 +9,7 @@ export interface Project {
   description: string;
   shortDescription?: string;
   fullDescription?: string;
+  features?: string[];
   image: string;
   thumbnail?: string;
   technologies: string[];

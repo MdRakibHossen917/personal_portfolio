@@ -126,6 +126,36 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    id: 'swanon-golf-design',
+    slug: 'swanon-golf-design',
+    title: 'Swanon Golf Design',
+    category: 'webflow',
+    categoryBadge: 'Webflow',
+    description:
+      'A premium golf course design website showcasing world-class golf architecture, strategic master planning, and luxury golf destinations. Features elegant layouts, immersive golf course imagery, project showcases, and a refined user experience.',
+    fullDescription:
+      'A premium golf course design website showcasing world-class golf architecture, strategic master planning, and luxury golf destinations. Features elegant layouts, immersive golf course imagery, project showcases, and a refined user experience. Key features include a premium golf design landing page, elegant navigation system, full-screen golf course hero section, golf course project showcase with Sentosa Golf Club project details, location-based project information, golf course statistics (18 holes, 72 par, 2023 completed), and a responsive layout.',
+    features: [
+      'Premium Golf Design Landing Page',
+      'Elegant Navigation System',
+      'Full-Screen Golf Course Hero Section',
+      'Golf Course Project Showcase',
+      'Sentosa Golf Club Project Details',
+      'Location-Based Project Information',
+      'Golf Course Statistics',
+      'Responsive Layout',
+    ],
+    image: '/images/projects/swanon-golf-design.webp',
+    technologies: [
+      'Webflow',
+      'Responsive Design',
+      'UI/UX Design',
+      'Custom Animations',
+      'Interactive Layouts',
+    ],
+    featured: true,
+  },
+  {
     id: 'taskflow-portal',
     slug: 'taskflow-distributed-team-workspace',
     title: 'TaskFlow Distributed Team Workspace',
