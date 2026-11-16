@@ -154,7 +154,7 @@ export const projects: Project[] = [
       'Custom Animations',
       'Interactive Layouts',
     ],
-    liveUrl: 'https://example.com',
+    liveUrl: 'https://swanson-golf-design.webflow.io/',
     featured: true,
   },
   {
@@ -173,7 +173,7 @@ export const projects: Project[] = [
       'Interactive Slider',
       'Custom Animations',
     ],
-    liveUrl: 'https://example.com',
+    liveUrl: 'https://otp-business-managements.webflow.io/',
     featured: true,
   },
   {
