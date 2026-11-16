@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Github, Linkedin, Mail } from 'lucide-react';
 import Container from '@/components/layout/Container';
+import { contactData } from '@/data/contact';
 
 interface HighlightCard {
   value: string;
@@ -133,7 +134,7 @@ export default function Hero() {
                   Connect:
                 </span>
                 <a
-                  href="https://github.com/rakibhossen"
+                  href={contactData.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub Profile"
@@ -143,7 +144,7 @@ export default function Hero() {
                 </a>
 
                 <a
-                  href="https://linkedin.com/in/rakibhossen"
+                  href={contactData.linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn Profile"
@@ -153,7 +154,7 @@ export default function Hero() {
                 </a>
 
                 <a
-                  href="mailto:contact@rakibhossen.dev"
+                  href={`mailto:${contactData.email}`}
                   aria-label="Send Email"
                   className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg border border-slate-800 bg-slate-900/90 text-slate-400 transition-colors duration-200 hover:border-indigo-500/60 hover:bg-slate-800 hover:text-white shadow-2xs"
                 >
