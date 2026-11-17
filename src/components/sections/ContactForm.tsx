@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, FormEvent, ChangeEvent } from 'react';
-import { Send, Loader2, AlertCircle, Info } from 'lucide-react';
+import { useState, useRef, FormEvent, ChangeEvent } from 'react';
+import { Send, Loader2, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { contactData } from '@/data/contact';
 
 interface FormData {
@@ -9,6 +9,7 @@ interface FormData {
   email: string;
   projectType: string;
   message: string;
+  _hp: string;
 }
 
 interface FormErrors {
@@ -19,17 +20,20 @@ interface FormErrors {
 }
 
 export default function ContactForm() {
+  const formStartTime = useRef<number>(Date.now());
+
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
     projectType: contactData.projectTypes[0] || 'MERN Stack Web Application',
     message: '',
+    _hp: '',
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionFeedback, setSubmissionFeedback] = useState<{
-    type: 'pending-integration' | 'error';
+    type: 'success' | 'error';
     message: string;
   } | null>(null);
 
@@ -38,6 +42,8 @@ export default function ContactForm() {
 
     if (!formData.name.trim()) {
       newErrors.name = 'Full Name is required';
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = 'Full Name must be at least 2 characters';
     }
 
     if (!formData.email.trim()) {
@@ -82,28 +88,54 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     try {
-      // Simulate client validation delay without faking live email delivery
-      await new Promise((resolve) => setTimeout(resolve, 800));
-
-      // As per Section 9: Do not simulate successful delivery when no backend provider is configured.
-      // State clearly that validation passed and backend delivery integration is pending.
-      setSubmissionFeedback({
-        type: 'pending-integration',
-        message:
-          'Form validation passed. Email delivery integration (Resend/SendGrid) is currently pending server configuration. In the meantime, please contact directly via email above.',
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          projectType: formData.projectType,
+          message: formData.message,
+          _hp: formData._hp,
+          _t: formStartTime.current,
+        }),
       });
 
-      // Clear input fields
-      setFormData({
-        name: '',
-        email: '',
-        projectType: contactData.projectTypes[0] || 'MERN Stack Web Application',
-        message: '',
-      });
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSubmissionFeedback({
+          type: 'success',
+          message:
+            data.message ||
+            'Thank you! Your message has been delivered successfully. I will get back to you shortly.',
+        });
+
+        // Reset form fields
+        setFormData({
+          name: '',
+          email: '',
+          projectType: contactData.projectTypes[0] || 'MERN Stack Web Application',
+          message: '',
+          _hp: '',
+        });
+        setErrors({});
+        formStartTime.current = Date.now();
+      } else {
+        setSubmissionFeedback({
+          type: 'error',
+          message:
+            data.error ||
+            'Failed to deliver message. Please try again or email directly to rakibhossen.dev@gmail.com.',
+        });
+      }
     } catch {
       setSubmissionFeedback({
         type: 'error',
-        message: 'An unexpected validation error occurred. Please try again.',
+        message:
+          'Network or server error occurred while sending your message. Please check your connection or email directly at rakibhossen.dev@gmail.com.',
       });
     } finally {
       setIsSubmitting(false);
@@ -113,6 +145,20 @@ export default function ContactForm() {
   return (
     <div className="rounded-[14px] border border-slate-800/80 bg-[#10192B] p-6 sm:p-8 shadow-xs">
       <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4">
+        {/* Spam Protection Honeypot Field */}
+        <div className="hidden" aria-hidden="true">
+          <label htmlFor="_hp">Leave this field blank</label>
+          <input
+            id="_hp"
+            name="_hp"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            value={formData._hp}
+            onChange={handleChange}
+          />
+        </div>
+
         {/* First Row: Full Name and Email Address */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {/* Full Name */}
@@ -128,12 +174,13 @@ export default function ContactForm() {
               name="name"
               type="text"
               autoComplete="name"
+              disabled={isSubmitting}
               value={formData.name}
               onChange={handleChange}
               placeholder="e.g. Alex Morgan"
               aria-invalid={!!errors.name}
               aria-describedby={errors.name ? 'name-error' : undefined}
-              className={`h-11 w-full rounded-md border bg-[#1E293B] px-3.5 text-sm text-[#F8FAFC] placeholder-[#64748B] transition-colors focus:outline-hidden focus:ring-2 focus:ring-primary ${
+              className={`h-11 w-full rounded-md border bg-[#1E293B] px-3.5 text-sm text-[#F8FAFC] placeholder-[#64748B] transition-colors focus:outline-hidden focus:ring-2 focus:ring-primary disabled:opacity-60 disabled:cursor-not-allowed ${
                 errors.name
                   ? 'border-rose-500/80 focus:ring-rose-500'
                   : 'border-slate-700/80 focus:border-transparent'
@@ -163,12 +210,13 @@ export default function ContactForm() {
               name="email"
               type="email"
               autoComplete="email"
+              disabled={isSubmitting}
               value={formData.email}
               onChange={handleChange}
               placeholder="alex@company.com"
               aria-invalid={!!errors.email}
               aria-describedby={errors.email ? 'email-error' : undefined}
-              className={`h-11 w-full rounded-md border bg-[#1E293B] px-3.5 text-sm text-[#F8FAFC] placeholder-[#64748B] transition-colors focus:outline-hidden focus:ring-2 focus:ring-primary ${
+              className={`h-11 w-full rounded-md border bg-[#1E293B] px-3.5 text-sm text-[#F8FAFC] placeholder-[#64748B] transition-colors focus:outline-hidden focus:ring-2 focus:ring-primary disabled:opacity-60 disabled:cursor-not-allowed ${
                 errors.email
                   ? 'border-rose-500/80 focus:ring-rose-500'
                   : 'border-slate-700/80 focus:border-transparent'
@@ -197,11 +245,12 @@ export default function ContactForm() {
           <select
             id="projectType"
             name="projectType"
+            disabled={isSubmitting}
             value={formData.projectType}
             onChange={handleChange}
             aria-invalid={!!errors.projectType}
             aria-describedby={errors.projectType ? 'projectType-error' : undefined}
-            className="h-11 w-full rounded-md border border-slate-700/80 bg-[#1E293B] px-3.5 text-sm text-[#F8FAFC] transition-colors focus:outline-hidden focus:ring-2 focus:ring-primary focus:border-transparent cursor-pointer"
+            className="h-11 w-full rounded-md border border-slate-700/80 bg-[#1E293B] px-3.5 text-sm text-[#F8FAFC] transition-colors focus:outline-hidden focus:ring-2 focus:ring-primary focus:border-transparent cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {contactData.projectTypes.map((type) => (
               <option key={type} value={type} className="bg-[#1E293B] text-white">
@@ -232,12 +281,13 @@ export default function ContactForm() {
             id="message"
             name="message"
             rows={4}
+            disabled={isSubmitting}
             value={formData.message}
             onChange={handleChange}
             placeholder="Tell me about your project, timeline, and goals..."
             aria-invalid={!!errors.message}
             aria-describedby={errors.message ? 'message-error' : undefined}
-            className={`min-h-[120px] w-full resize-y rounded-md border bg-[#1E293B] p-3.5 text-sm text-[#F8FAFC] placeholder-[#64748B] transition-colors focus:outline-hidden focus:ring-2 focus:ring-primary ${
+            className={`min-h-[120px] w-full resize-y rounded-md border bg-[#1E293B] p-3.5 text-sm text-[#F8FAFC] placeholder-[#64748B] transition-colors focus:outline-hidden focus:ring-2 focus:ring-primary disabled:opacity-60 disabled:cursor-not-allowed ${
               errors.message
                 ? 'border-rose-500/80 focus:ring-rose-500'
                 : 'border-slate-700/80 focus:border-transparent'
@@ -260,12 +310,16 @@ export default function ContactForm() {
             role="status"
             aria-live="polite"
             className={`rounded-lg p-3 text-xs leading-relaxed flex items-start gap-2.5 ${
-              submissionFeedback.type === 'pending-integration'
-                ? 'bg-indigo-950/40 border border-indigo-500/30 text-indigo-200'
+              submissionFeedback.type === 'success'
+                ? 'bg-emerald-950/40 border border-emerald-500/30 text-emerald-200'
                 : 'bg-rose-950/40 border border-rose-500/30 text-rose-200'
             }`}
           >
-            <Info className="h-4 w-4 shrink-0 text-indigo-400 mt-0.5" />
+            {submissionFeedback.type === 'success' ? (
+              <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-400 mt-0.5" />
+            ) : (
+              <AlertCircle className="h-4 w-4 shrink-0 text-rose-400 mt-0.5" />
+            )}
             <span>{submissionFeedback.message}</span>
           </div>
         )}
