@@ -14,7 +14,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-100">
         <Image
           src={project.image}
-          alt={project.title}
+          alt={`${project.title} - ${project.categoryBadge} project screenshot`}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 480px"
           className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"

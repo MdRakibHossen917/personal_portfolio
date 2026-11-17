@@ -51,12 +51,7 @@ export const projects: Project[] = [
     description:
       'A modern Christian language learning landing page built with Bubble.io, featuring a minimalist black-and-white design, elegant typography, and responsive layouts to introduce a unique language learning experience inspired by the words of Jesus.',
     image: '/images/projects/tulmada.webp',
-    technologies: [
-      'Bubble.io',
-      'No-Code Development',
-      'Responsive Design',
-      'UI/UX Design',
-    ],
+    technologies: ['Bubble.io', 'No-Code Development', 'Responsive Design', 'UI/UX Design'],
     liveUrl: 'https://tulmada.com/',
     featured: true,
   },
