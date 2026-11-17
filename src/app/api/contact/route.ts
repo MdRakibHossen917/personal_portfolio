@@ -172,7 +172,7 @@ export async function POST(request: Request) {
     const resend = new Resend(apiKey);
     const destinationEmail = process.env.CONTACT_EMAIL || 'rakibhossen.dev@gmail.com';
     const fromAddress =
-      process.env.RESEND_FROM_EMAIL || 'Portfolio Contact Form <onboarding@resend.com>';
+      process.env.RESEND_FROM_EMAIL || 'Portfolio Contact Form <onboarding@resend.dev>';
 
     const timestampIso = new Date().toISOString();
     const timestampFormatted = new Intl.DateTimeFormat('en-US', {
